@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2 id = "employeelist">Employee List</h2>
+    <ul>
+        {% for employee in employees %}
+            <li>
+                <a href="{{ url_for('employee_detail', id=employee.id) }}">{{ employee.name }}</a>
+                - {{ employee.position }}
+                <br>
+                <br>
+                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                <form action="{{ url_for('delete_employee', id=employee.id) }}" method="post">
+                    <button type="submit">Delete</button>
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

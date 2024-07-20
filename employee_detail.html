@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="details">
+        <h2>Employee Detail</h2>
+        <p>Name: {{ employee.name }}</p>
+        <p>Position: {{ employee.position }}</p>
+        <p>Salary: {{ employee.salary }}</p>
+        <p>Performance Score: {{ employee.performance_score }}</p>
+        <br>
+        <br>
+        <br>
+        <a href="{{ url_for('update_employee', id=employee.id) }}">Update</a>
+        <a href="{{ url_for('generate_performance_report', id=employee.id) }}">Generate Performance Report</a>
+    </div>
+{% endblock %}
